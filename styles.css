@@ -22,6 +22,11 @@ a:hover{text-decoration:underline}
 .btn:hover{filter:brightness(1.02)}
 .hero{padding:72px 0;border-bottom:1px solid var(--line);background:radial-gradient(1200px 500px at 20% -10%,rgba(56,189,248,.12),transparent 60%),radial-gradient(1200px 500px at 120% -20%,rgba(125,211,252,.08),transparent 60%)}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+.hero-visual{width:112px;height:auto;margin:0 0 12px;display:block;filter:drop-shadow(0 10px 20px rgba(56,189,248,.25));animation:float 4s ease-in-out infinite}
+.automation-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(15,21,32,.6);color:#cfe7ff;font-weight:600;font-size:.95rem;letter-spacing:.01em}
+.automation-gear{display:inline-flex;animation:spin 3s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .lead{color:#c6d0e0;max-width:54ch}
 .cta-row{display:flex;gap:12px;margin:16px 0 8px}
 .sub-note{color:#bcd0e7}
