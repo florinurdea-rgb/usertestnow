@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/medicaltranslator",
-      "destination": "/medicaltranslator/index.html"
+      "destination": "/medicaltranslator.html"
     },
     {
       "source": "/medicaltranslator/",
-      "destination": "/medicaltranslator/index.html"
+      "destination": "/medicaltranslator.html"
     }
   ],
   "headers": [

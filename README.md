@@ -30,4 +30,4 @@ Set these in Vercel project settings:
 
 
 ### Troubleshooting routes
-If `/medicaltranslator` does not load on your domain, redeploy after the latest `vercel.json` rewrite update so `/medicaltranslator` maps to `/medicaltranslator/index.html`.
+If `/medicaltranslator` does not load on your domain, redeploy after the latest `vercel.json` rewrite update so `/medicaltranslator` maps to `/medicaltranslator.html`.
