@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medical Doc Translator</title>
+  <meta name="description" content="Upload a medical document, analyze it, and translate it with clinical context preservation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/medicaltranslator/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
+  <script src="/medicaltranslator/script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <h1>Medical Doc Translator</h1>
+      <p>Translate medical documents from Romanian (or other languages) with context-first clinical precision.</p>
+    </header>
+
+    <section class="card uploader-card">
+      <h2>1) Upload Document</h2>
+      <p class="muted">Accepted formats: <strong>.txt</strong>, <strong>.md</strong>, <strong>.html</strong>. For rich layout-sensitive docs, convert to HTML first for best format retention.</p>
+      <input id="file-input" type="file" accept=".txt,.md,.html,.htm,text/plain,text/markdown,text/html" />
+      <div id="ingestion-status" class="status idle">Waiting for document upload.</div>
+    </section>
+
+    <section class="card controls-card">
+      <h2>2) Choose Translation Language</h2>
+      <div class="row">
+        <label for="target-language">Translate to</label>
+        <select id="target-language">
+          <option value="English">English</option>
+          <option value="Spanish">Spanish</option>
+          <option value="French">French</option>
+          <option value="German">German</option>
+          <option value="Italian">Italian</option>
+          <option value="Portuguese">Portuguese</option>
+          <option value="Romanian">Romanian</option>
+        </select>
+      </div>
+      <div class="row inline">
+        <button id="analyze-btn" class="btn secondary" disabled>Analyze</button>
+        <button id="translate-btn" class="btn" disabled>Analyze & Translate</button>
+        <button id="download-btn" class="btn ghost" disabled>Download as PDF</button>
+      </div>
+      <div id="translate-status" class="status idle">Upload a file to begin.</div>
+    </section>
+
+    <section class="card preview-card">
+      <h2>3) Preview</h2>
+      <div class="preview-grid">
+        <article>
+          <h3>Original Document</h3>
+          <div id="source-preview" class="preview-pane">No file uploaded.</div>
+        </article>
+        <article>
+          <h3>Translated Output</h3>
+          <div id="translated-preview" class="preview-pane">Translated output will appear here.</div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
