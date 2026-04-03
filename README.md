@@ -27,3 +27,7 @@ Set these in Vercel project settings:
 
 - `OPENAI_API_KEY`: your OpenAI API key/token.
 - `OPENAI_MODEL` (optional): defaults to `gpt-4.1-mini`.
+
+
+### Troubleshooting routes
+If `/medicaltranslator` does not load on your domain, redeploy after the latest `vercel.json` rewrite update so `/medicaltranslator` maps to `/medicaltranslator/index.html`.
