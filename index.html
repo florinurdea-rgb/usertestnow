@@ -32,8 +32,12 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <img src="/assets/handyman.svg" class="hero-handyman" alt="Handyman holding a wrench">
-          <h1>Handyman connections</h1>
+          <img src="/assets/robot-cash.svg" class="hero-visual" alt="Robot with cash and gears">
+          <h1>We map and automate wit AI</h1>
+          <div class="automation-badge" aria-hidden="true">
+            <span class="automation-gear">⚙️</span>
+            Automation in motion
+          </div>
           <p class="lead">We help product teams <strong>see</strong> their end‑to‑end user journey, spot <strong>AI automation & UX opportunities</strong>, and ship improvements—fast.</p>
           <div class="cta-row">
             <a href="#workshops" class="btn big">Book a UX Mapping Workshop</a>
@@ -48,6 +52,50 @@
             <li>AI opportunity radar (automation & insights)</li>
             <li>Actionable roadmap & deliverables</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote panel alt">
+      <div class="container quote-grid">
+        <div>
+          <h2>Instant automation quote</h2>
+          <p class="lead">Pick your scope and goals to get a live estimate for a mapping + automation engagement.</p>
+          <form id="quote-form" class="quote-form" onsubmit="return false;">
+            <label class="field">
+              <span>Project scope</span>
+              <select name="scope" required>
+                <option value="small">Small team (1–2 journeys)</option>
+                <option value="medium" selected>Growth team (3–5 journeys)</option>
+                <option value="large">Enterprise team (6+ journeys)</option>
+              </select>
+            </label>
+            <fieldset class="field">
+              <legend>Automation goals</legend>
+              <label class="check"><input type="checkbox" name="goals" value="ops" checked> Ops automation</label>
+              <label class="check"><input type="checkbox" name="goals" value="support"> Support deflection</label>
+              <label class="check"><input type="checkbox" name="goals" value="insights"> Insight dashboards</label>
+              <label class="check"><input type="checkbox" name="goals" value="personalization"> Personalization</label>
+            </fieldset>
+            <label class="field">
+              <span>Timeline urgency</span>
+              <input type="range" name="urgency" min="1" max="3" value="2" step="1">
+              <div class="range-labels"><span>Flexible</span><span>Standard</span><span>Rush</span></div>
+            </label>
+          </form>
+        </div>
+        <div class="quote-card card">
+          <p class="muted">Estimated investment</p>
+          <div class="quote-price" aria-live="polite">
+            <span class="price-main" id="quote-price">$12,400</span>
+            <span class="price-note" id="quote-range">Range $10,500 – $14,300</span>
+          </div>
+          <ul class="ticks">
+            <li>Discovery + journey mapping</li>
+            <li>Automation roadmap & quick wins</li>
+            <li>Prototype + validation sprint</li>
+          </ul>
+          <button class="btn" type="button">Request this package</button>
         </div>
       </div>
     </section>
