@@ -10,7 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/medicaltranslator/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
-  <script src="/medicaltranslator/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.7.2/mammoth.browser.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+  <script src="/medicaltranslator/script.js" defer type="module"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -21,8 +24,8 @@
 
     <section class="card uploader-card">
       <h2>1) Upload Document</h2>
-      <p class="muted">Accepted formats: <strong>.txt</strong>, <strong>.md</strong>, <strong>.html</strong>. For rich layout-sensitive docs, convert to HTML first for best format retention.</p>
-      <input id="file-input" type="file" accept=".txt,.md,.html,.htm,text/plain,text/markdown,text/html" />
+      <p class="muted">Accepted formats: <strong>.docx</strong>, <strong>.pdf</strong>, <strong>.txt</strong>, <strong>.md</strong>, <strong>.html</strong>.</p>
+      <input id="file-input" type="file" accept=".docx,.pdf,.txt,.md,.html,.htm,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,text/markdown,text/html" />
       <div id="ingestion-status" class="status idle">Waiting for document upload.</div>
     </section>
 
@@ -31,13 +34,12 @@
       <div class="row">
         <label for="target-language">Translate to</label>
         <select id="target-language">
+          <option value="" selected>Select language</option>
           <option value="English">English</option>
           <option value="Spanish">Spanish</option>
           <option value="French">French</option>
           <option value="German">German</option>
-          <option value="Italian">Italian</option>
-          <option value="Portuguese">Portuguese</option>
-          <option value="Romanian">Romanian</option>
+          <option value="Hungarian">Hungarian</option>
         </select>
       </div>
       <div class="row inline">
@@ -45,7 +47,7 @@
         <button id="translate-btn" class="btn" disabled>Analyze & Translate</button>
         <button id="download-btn" class="btn ghost" disabled>Download as PDF</button>
       </div>
-      <div id="translate-status" class="status idle">Upload a file to begin.</div>
+      <div id="translate-status" class="status idle">Upload a file and select a language to begin.</div>
     </section>
 
     <section class="card preview-card">
